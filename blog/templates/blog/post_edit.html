@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}
+Blog - Editar Postagem
+{% endblock title %}
+
+{% block content %}
+    <div class="container justify-content-center">
+        <div class="card">
+            <div class="card-header">
+                <h1>Editar Postagem</h1>
+            </div>
+            <div class="card-body">
+                <div>
+                    <form action="" method="post">{% csrf_token %}
+                        {% bootstrap_form form %}
+                        <input type="submit" value="Editar" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Blog
+{% endblock title %}
+
+{% block content %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+<div class="container justify-content-center">
+    {% for post in object_list %}
+        <div class="post-preview">
+            <a href="{{post.get_absolute_url}}">
+              <h2 class="post-title">
+                {{ post.titulo }}
+              </h2>
+              <h3 class="post-subtitle">
+                {{ post.conteudo}}
+              </h3>
+            </a>
+            <p class="post-meta">Publicado em</a>
+              {{post.publicado}}</p>
+          </div>
+          <hr>
+    {% endfor %}
+</div>
+    <!-- Pager -->
+    <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+    </div>
+{% endblock content %}

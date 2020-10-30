@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}
+Blog - Nova Postagem
+{% endblock title %}
+
+{% block content %}
+<div class="container justify-content-center">
+    <div class="card">
+        <div class="card-header">
+            <h1>Nova Postagem</h1>
+        </div>
+        <div class="card-body">
+            <div>
+                <form action="" method="post">{% csrf_token %}
+                    {% bootstrap_form form %}
+                    <input type="submit" value="Publicar" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div
+{% endblock content %}

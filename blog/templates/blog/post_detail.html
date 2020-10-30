@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Blog - Details
+{% endblock title %}
+
+{% block content %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="post-entry">
+        <h2><a href="#">{{ object.titulo }}</a></h1>
+        <p>{{ object.conteudo }}</p>
+    </div>
+    <a href="{{object.get_absolute_url_update}}">+ Editar Postagem do Blog</a><br> 
+    <a href="{{object.get_absolute_url_delete}}"> Deletar Postagem do Blog</a>
+{% endblock content %}
