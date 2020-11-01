@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
 Blog
 {% endblock title %}
+
+{% block header %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url({% static 'img/home-bg.jpg' %})">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Publicações</h1>
+                        <span class="subheading">Blog desenvolvido em Django</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
 
 {% block content %}
     {% if messages %}
@@ -20,7 +37,7 @@ Blog
                 {{ post.titulo }}
               </h2>
               <h3 class="post-subtitle">
-                {{ post.conteudo}}
+                {{ post.conteudo|safe|truncatechars:"200" }}
               </h3>
             </a>
             <p class="post-meta">Publicado em</a>

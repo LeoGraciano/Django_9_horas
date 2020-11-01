@@ -19,13 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('contact/', include('contato.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
-    path('', include('blog.urls')),
 
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
-                          documentet_root=settings.MEDIA_ROOT)
+                          document_root=settings.MEDIA_ROOT)

@@ -11,13 +11,11 @@ Blog - Nova Postagem
             <h1>Nova Postagem</h1>
         </div>
         <div class="card-body">
-            <div>
-                <form action="" method="post">{% csrf_token %}
-                    {% bootstrap_form form %}
-                    <input type="submit" value="Publicar" class="btn btn-primary">
-                </form>
-            </div>
+            <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" value="Publicar" class="btn btn-primary">
+            </form>
         </div>
     </div>
-</div
+</div>
 {% endblock content %}

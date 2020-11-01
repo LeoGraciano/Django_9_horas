@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}
+Blog
+{% endblock title %}
+{% block header %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({% static 'img/contact-bg.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Entre em contato conosco</h1>
+                    <span class="subheading">Tem alguma pergunta?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+{% block content %}
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>Quer entrar em contato? Preencha o formulário abaixo para me enviar uma mensagem e entrarei em contato
+                com você o mais breve possível!</p>
+            <form method="post" action='{% url "contact" %}'>{% csrf_token %}
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        {% bootstrap_field form.nome %}
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        {% bootstrap_field form.email %}
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {% bootstrap_field form.telefone %}
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        {% bootstrap_field form.mensagem %}
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                {% if success %}
+                    <div id="success">
+                        E-mail Enviando com Sucesso.
+                    </div>
+                {% endif %}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<hr>
+{% endblock content %}
