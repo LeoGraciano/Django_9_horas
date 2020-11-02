@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from decouple import config
 from dj_database_url import parse as dburl
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -149,3 +151,6 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '6255e7069bd22f'
 EMAIL_HOST_PASSWORD = '2760ca0bd41802'
 EMAIL_PORT = '2525'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
