@@ -16,9 +16,12 @@ dj-static==0.0.6
 Django==3.1.2
 django-bootstrap4==2.3.1
 django-ckeditor==6.0.0
+django-heroku==0.3.1
 django-js-asset==1.2.2
+env==0.1.0
 flake8==3.8.4
 freeze==3.0
+gunicorn==20.0.4
 html5lib==1.0.1
 idna==2.10
 ipaddr==2.2.0
@@ -39,9 +42,9 @@ pep517==0.8.2
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==8.0.1
-pkg-resources==0.0.0
 progress==1.5
 prompt-toolkit==3.0.8
+psycopg2==2.8.6
 ptyprocess==0.6.0
 pycodestyle==2.6.0
 pyflakes==2.2.0
@@ -66,3 +69,4 @@ typing-extensions==3.7.4.3
 urllib3==1.25.11
 wcwidth==0.2.5
 webencodings==0.5.1
+whitenoise==5.2.0
